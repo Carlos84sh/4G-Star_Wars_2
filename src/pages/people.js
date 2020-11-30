@@ -1,10 +1,13 @@
 import React from "react";
+import { useParams } from "react-router-dom";
 
 export default function(props) {
+    const params = useParams()
+
     return (
         <div className="container">
             <div className="jumbotron">
-                <h1>Contact page</h1>
+                <h1>People {params.id} page</h1>
             </div>
         </div>
     )
