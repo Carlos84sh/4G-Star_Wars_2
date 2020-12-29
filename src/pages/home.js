@@ -1,53 +1,43 @@
-import React from "react";
-import {useState, useEffect} from "react"
+import React, { useContext, useEffect } from "react";
+import { Link } from "react-router-dom";
+
+import { Context } from "../store/index.js";
+
+import Card from "../components/card.js"
 
 export default function(props) {
+    const { store, actions } = useContext(Context);
 
-    const [people,setPeople] = useState([])
-    const [planets,setPlanets] = useState([])
-
-    useEffect(()=>{
-        const endpoint = "https://swapi.dev/api/people/";
-        const config = {mode:"cors"}
-        fetch(endpoint,config).then((response)=>{
-            return response.json()
-        }).then((json)=>{
-            setPeople(json["results"])
-            console.log(json["results"])
-        })
-    },[])
-
-    useEffect(()=>{
-        const endpoint = "https://swapi.dev/api/planets/";
-        const config = {mode:"cors"}
-        fetch(endpoint,config).then((response)=>{
-            return response.json()
-        }).then((json)=>{
-            setPlanets(json["results"])
-            console.log(json["results"])
-        })
-    },[])
+    useEffect(() => {
+        actions.getPlanets()
+        actions.getPeople()
+    }, [])
 
     return (
         <div className="container">
-            <div className="jumbotron">
-                <h1>Home page</h1>
-                {people.map((value,index)=>{
-                    return (
-                        <div key={index}>
-                            {value['name']}
-                        </div>
-                        
-                    )
-                })}
-                {planets.map((value,index)=>{
-                    return (
-                        <div key={index}>
-                            {value['name']}
-                        </div>                        
-                    )
-                })}
+            
+            <h1>Characters</h1>
+            <div className="scroll-horizontal">
+                {store.people.map((person, index) => 
+                    <Card key={index} name={person.name} resource="people" id={index} element={person}>
+                        <p>Hair Color: {person.hair_color}</p>
+                        <p>Eye-Color: {person.eye_color}</p>
+                    </Card>
+                )}
             </div>
+
+            <h1>Planets</h1>
+            <div className="scroll-horizontal">
+                {store.planets.map((planet, index) => 
+                    <Card key={index} name={planet.name} resource="planets" id={index}>
+                        <p className="card-text">Population: {planet.population}</p>
+                        <p className="card-text">Terrain: {planet.terrain}</p>
+                    </Card>
+                )}
+            </div>
+
+
+          
         </div>
     )
 }

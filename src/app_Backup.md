@@ -5,15 +5,13 @@ import {
   Route
 } from "react-router-dom";
 
-import injectContext from "./store"
-
 import Footer from "./components/footer.js"
 import Navbar from "./components/navbar.js"
 import Home from "./pages/home.js"
-import People from "./pages/people.js"
 import Planets from "./pages/planets.js"
+import People from "./pages/people.js"
 
-export default injectContext(function(props) {
+export default function(props) {
     return (
         <Router>
             <Navbar />
@@ -24,17 +22,16 @@ export default injectContext(function(props) {
                         <Home />
                     </Route>
 
-                    <Route path="/people/:index">
-                        <People />
+                    <Route path="/planets/:id">
+                        <Planets />
                     </Route>
 
-                    <Route path="/planets/:index">
-                        <Planets />
+                    <Route path="/people/:id">
+                        <People />
                     </Route>
                 </Switch>
             </div>
 
-            
         </Router>
     )
-})
+}
