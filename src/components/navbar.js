@@ -17,7 +17,7 @@ export default function(props) {
         <nav className="navbar navbar-expand navbar-light bg-light mb-3">
             <div className="container">
                 <a className="navbar-brand" href="#">
-                    <img src="https://static-mh.content.disney.io/starwars/assets/navigation/sw_logo_stacked-336c62367939.png"/>
+                    <img src="https://1000marcas.net/wp-content/uploads/2019/12/Star-Wars-logo-tm.jpg"/>
                 </a>
                 <div class="dropdown">
                     <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">

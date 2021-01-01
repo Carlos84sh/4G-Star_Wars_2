@@ -4,9 +4,12 @@
     background-color: black;
 }
 
+.navbar {
+    background-color: black;
+}
+
 .navbar-brand img {
     width: 150px;
-    
 }
 
 #button-info {

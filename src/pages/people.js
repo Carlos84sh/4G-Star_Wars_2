@@ -3,6 +3,8 @@ import { useParams } from "react-router-dom";
 
 import { Context } from "../store/index.js";
 
+import {text} from "../pages/text.js"
+
 export default function(props) {
     const params = useParams()
     const { store, actions } = useContext(Context);
@@ -19,7 +21,7 @@ export default function(props) {
                 <div className="col-6 text-center pr-5">
                     <h1>{person.name}</h1>
                     <p>
-                        Lorem fistrum ese que llega no puedor la caidita te voy a borrar el cerito al ataquerl pupita qué dise usteer diodeno quietooor. A gramenawer de la pradera a gramenawer no puedor no puedor a wan. Hasta luego Lucas a peich a wan tiene musho peligro torpedo jarl caballo blanco caballo negroorl a peich de la pradera no te digo trigo por no llamarte Rodrigor.
+                        asdasdadasdasdas
                     </p> 
                 </div>
             </div>

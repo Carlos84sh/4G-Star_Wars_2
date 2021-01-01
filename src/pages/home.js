@@ -16,7 +16,7 @@ export default function(props) {
     return (
         <div className="container">
             
-            <h1>Characters</h1>
+            <h1>Personajes</h1>
             <div className="scroll-horizontal">
                 {store.people.map((person, index) => 
                     <Card key={index} name={person.name} resource="people" id={index} element={person}>
@@ -26,7 +26,7 @@ export default function(props) {
                 )}
             </div>
 
-            <h1>Planets</h1>
+            <h1>Planetas</h1>
             <div className="scroll-horizontal">
                 {store.planets.map((planet, index) => 
                     <Card key={index} name={planet.name} resource="planets" id={index}>
