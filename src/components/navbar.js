@@ -14,10 +14,13 @@ export default function(props) {
     }, [store.favorites])
 
     return (
-        <nav className="navbar navbar-expand navbar-light bg-light mb-3">
+        <nav className="navbar navbar-expand navbar-light mb-3">
             <div className="container">
                 <a className="navbar-brand" href="#">
-                    <img src="https://1000marcas.net/wp-content/uploads/2019/12/Star-Wars-logo-tm.jpg"/>
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6c/Star_Wars_Logo.svg/1200px-Star_Wars_Logo.svg.png"/>
+                </a>
+                <a className="resistencia">
+                    <img src="https://cdn.designcrowd.com/blog/2015/December/star-wars-logos/GR_LogosFromStarWars_Banner_828x300.jpg"/>
                 </a>
                 <div class="dropdown">
                     <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">

@@ -1,11 +1,23 @@
 @import "~bootstrap/dist/css/bootstrap.min.css";
 
+body{
+    background-color: rgb(29, 28, 28);
+}
+
+h1{
+    color:white;
+}
+
 .navbar-brand {
     background-color: black;
 }
 
 .navbar {
     background-color: black;
+}
+.resistencia img{
+    height: 125px;
+    width:500px;
 }
 
 .navbar-brand img {
