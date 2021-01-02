@@ -3,7 +3,7 @@ import { useParams } from "react-router-dom";
 
 import { Context } from "../store/index.js";
 
-import {text} from "../pages/text.js"
+import Text  from "../pages/text.js"
 
 export default function(props) {
     const params = useParams()
@@ -20,9 +20,7 @@ export default function(props) {
                 </div>
                 <div className="col-6 text-center pr-5">
                     <h1>{person.name}</h1>
-                    <p>
-                        asdasdadasdasdas
-                    </p> 
+                    <p><Text name={person.name}/></p> 
                 </div>
             </div>
             <div className="divider-pink"></div>

@@ -16,7 +16,7 @@ export default function({ getStore, getActions, setStore }) {
                 setStore({loading: !store.loading})
             },
 
-            getPlanets() {
+            getPlanets() {   // Obtener planetas
                 const store = getStore() 
                 if (store.planets.length === 0) {  
                     const endpoint = "https://swapi.dev/api/planets/";
@@ -31,7 +31,7 @@ export default function({ getStore, getActions, setStore }) {
                 }
             },
 
-            getPeople() {
+            getPeople() {   // Obtener personajes
                 const store = getStore()
                 if (store.planets.length === 0) {
                     const endpoint = "https://swapi.dev/api/people/";
@@ -45,7 +45,7 @@ export default function({ getStore, getActions, setStore }) {
                     })
                 }
             },
-            addList(item) {
+            addList(item) {   //añadir a la lista
                 const store = getStore()
                 if (store.favorites.includes(item) == true) {
                     let newList = store.favorites.filter((element, index) => {
@@ -60,7 +60,7 @@ export default function({ getStore, getActions, setStore }) {
                 console.log(store.favorites);
                 
             },    
-            deleteList(item) {
+            deleteList(item) {   //eliminar de la lista
                 const store = getStore()
                 let newList = store.favorites.filter((element, index) => {
                         return(element != item)

@@ -22,6 +22,9 @@ export default function(props) {
                     <Card key={index} name={person.name} resource="people" id={index} element={person}>
                         <p>Hair Color: {person.hair_color}</p>
                         <p>Eye-Color: {person.eye_color}</p>
+                        <p>Gender: {person.gender}</p> 
+
+
                     </Card>
                 )}
             </div>

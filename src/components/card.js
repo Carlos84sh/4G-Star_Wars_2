@@ -24,7 +24,7 @@ export default function({name,children,resource,id}) {    //props name,children,
                         </div>
                         <div className="col-8 text-right">
                             <button type="button" className={store.favorites.includes(name) ? "btn btn-danger" : "btn btn-warning"} onClick={event => actions.addList(name)}>
-                                {store.favorites.includes(name) ? "Remove from Favorites" : "Add to Favorites"}
+                                {store.favorites.includes(name) ? <i className="far fa-heart"></i>: <i className="fas fa-heart"></i>}
 
                             </button>
                         </div>

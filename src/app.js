@@ -31,6 +31,7 @@ export default injectContext(function(props) {
                     <Route path="/planets/:index">
                         <Planets />
                     </Route>
+                    <Footer />
                 </Switch>
             </div>
 

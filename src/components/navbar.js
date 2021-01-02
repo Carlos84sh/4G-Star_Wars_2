@@ -24,7 +24,7 @@ export default function(props) {
                 </a>
                 <div class="dropdown">
                     <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    Favorites
+                    Favorites {store.favorites.length}
                     </button>
                     <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                         {store.favorites.map((value, index) => {
