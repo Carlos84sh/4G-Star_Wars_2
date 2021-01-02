@@ -31,6 +31,9 @@ h1{
 .card {
     width: 400px;
 }
+.card-body{
+    background-color:rgb(29, 28, 28);
+}
 
 #card-more {
     max-width: 540px;
@@ -44,6 +47,7 @@ h1{
 	overflow-x: auto;
 	white-space: nowrap;
     margin: 25px 0;
+    background-color: rgb(29, 28, 28);
 }
 
 .divider-pink {

@@ -6,7 +6,7 @@ import { Context } from "../store/index.js";
 export default function({name,children,resource,id}) {    //props name,children,resource,id
     const { store, actions } = useContext(Context);
 
-    let path = "/"+resource+"/"+id; 
+    const url = "/"+resource+"/"+id; 
 
     
     return (
@@ -17,9 +17,10 @@ export default function({name,children,resource,id}) {    //props name,children,
                 <div className="card-body">
                     <h5 className="card-title">Nombre: {name}</h5>
                     {children}
+                    
                     <div className="row justify-content-between">
                         <div className="col-4 text-left">
-                            <Link to={path} className="btn btn-primary" id="button-info">Learn More!</Link>
+                            <Link to={url} className="btn btn-primary" id="button-info">Learn More!</Link>
                         </div>
                         <div className="col-8 text-right">
                             <button type="button" className={store.favorites.includes(name) ? "btn btn-danger" : "btn btn-warning"} onClick={event => actions.addList(name)}>
