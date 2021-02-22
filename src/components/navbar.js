@@ -22,14 +22,14 @@ export default function(props) {
                 <a className="resistencia">
                     <img src="https://cdn.designcrowd.com/blog/2015/December/star-wars-logos/GR_LogosFromStarWars_Banner_828x300.jpg"/>
                 </a>
-                <div class="dropdown">
-                    <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <div className="dropdown">
+                    <button className="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     Favorites {store.favorites.length}
                     </button>
-                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                    <div className="dropdown-menu" aria-labelledby="dropdownMenuButton">
                         {store.favorites.map((value, index) => {
                             return (
-                                <a key={index} class="dropdown-item" href="#">
+                                <a key={index} className="dropdown-item" href="#">
                                     {value}
                                     <button onClick={(event) => actions.deleteList(value)} type="button" className="close" aria-label="Close">
                                         <span aria-hidden="true">&times;</span>
