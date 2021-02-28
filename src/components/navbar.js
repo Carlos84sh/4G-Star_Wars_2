@@ -16,7 +16,7 @@ export default function(props) {
     return (
         <nav className="navbar navbar-expand navbar-light mb-3">
             <div className="container">
-                <a className="navbar-brand" href="#">
+                <a className="navbar-brand" href="/">
                     <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6c/Star_Wars_Logo.svg/1200px-Star_Wars_Logo.svg.png"/>
                 </a>
                 <a className="resistencia">
