@@ -1,17 +1,11 @@
 import React, {useContext, useEffect} from "react";
 import { Link } from "react-router-dom";
-
 import { Context } from "../store/index.js";
 
 
-export default function(props) {
+export default function({favorites}) {
     const { store, actions } = useContext(Context);
 
-    useEffect(() => {
-        // actions.getListFavorites()
-        console.log("ha cambiado");
-        
-    }, [store.favorites])
 
     return (
         <nav className="navbar navbar-expand navbar-light mb-3">

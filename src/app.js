@@ -4,7 +4,6 @@ import {
   Switch,
   Route
 } from "react-router-dom";
-
 import injectContext from "./store"
 
 import Footer from "./components/footer.js"
@@ -15,10 +14,10 @@ import Planets from "./pages/planets.js"
 
 export default injectContext(function(props) {
     return (
-        <Router>
-            <Navbar />
-            
+        <Router>    
             <div className="page">
+                <Navbar />
+
                 <Switch>
                     <Route exact path="/">
                         <Home />
@@ -31,11 +30,12 @@ export default injectContext(function(props) {
                     <Route path="/planets/:index">
                         <Planets />
                     </Route>
-                    <Footer />
+                    <Route>
+                        <Footer path="/" />
+                    </Route>
+                    
                 </Switch>
-            </div>
-
-            
+            </div>            
         </Router>
     )
 })

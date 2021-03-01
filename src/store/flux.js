@@ -16,6 +16,21 @@ export default function({ getStore, getActions, setStore }) {
                 setStore({loading: !store.loading})
             },
 
+            getPeople() {   // Obtener personajes
+                const store = getStore()
+                if (store.people.length === 0) {
+                    const endpoint = "https://swapi.dev/api/people/";
+                    const config = {
+                        method: "GET"
+                    }
+                    fetch(endpoint,config).then((response) => {
+                        return response.json()
+                    }).then((json) => {
+                        setStore({ people: json.results })
+                    })
+                }
+            },
+
             getPlanets() {   // Obtener planetas
                 const store = getStore() 
                 if (store.planets.length === 0) {  
@@ -31,42 +46,28 @@ export default function({ getStore, getActions, setStore }) {
                 }
             },
 
-            getPeople() {   // Obtener personajes
+            
+            addList(id) {   //añadir a la lista
                 const store = getStore()
-                if (store.planets.length === 0) {
-                    const endpoint = "https://swapi.dev/api/people/";
-                    const config = {
-                        method: "GET"
-                    }
-                    fetch(endpoint,config).then((response) => {
-                        return response.json()
-                    }).then((json) => {
-                        setStore({ people: json.results })
+                if (store.favorites.includes(id) == true) {
+                    const list = store.favorites.filter((element, index) => {
+                        return(element != id)
                     })
-                }
-            },
-            addList(item) {   //añadir a la lista
-                const store = getStore()
-                if (store.favorites.includes(item) == true) {
-                    let newList = store.favorites.filter((element, index) => {
-                        return(element != item)
-                    })
-                    setStore({favorites: newList})
+                    setStore({favorites: list})
                 } else {
-                    const newList = [...store.favorites]
-                    newList.push(item)
-                    setStore({favorites: newList})
+                    const list = [...store.favorites]
+                    list.push(id)
+                    setStore({favorites: list})
                 }
-                console.log(store.favorites);
                 
             },    
-            deleteList(item) {   //eliminar de la lista
+            deleteList(id) {   //eliminar de la lista
                 const store = getStore()
-                let newList = store.favorites.filter((element, index) => {
-                        return(element != item)
+                const list = store.favorites.filter((element, index) => {
+                        return(element != id)
                 })
-                setStore({favorites: newList})
-                console.log(store.favorites);
+                setStore({favorites: list})
+                console.log("favorito eliminado", store.favorites)
             }   
         }
     }

@@ -1,11 +1,11 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
-export default function(props) {
+export default function() {
     return (
         <footer className="footer">
             <div className="container">
-                <p>&copy; 2020. Carlos Sánchez Huelves</p>
-                <span>Estado: {store.loading ? "Cargando...":"Cargado"}</span> 
+                <span> 2020. Carlos Sánchez Huelves</span>
             </div>
         </footer>
     )

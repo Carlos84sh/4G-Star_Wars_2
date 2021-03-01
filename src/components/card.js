@@ -20,11 +20,11 @@ export default function({name,children,resource,id}) {    //props name,children,
                     
                     <div className="row justify-content-between">
                         <div className="col-4 text-left">
-                            <Link to={url} className="btn btn-primary" id="button-info">Learn More!</Link>
+                            <Link to={url} className="btn btn-primary" id="button-info">Info Stormtroopers</Link>
                         </div>
                         <div className="col-8 text-right">
-                            <button type="button" className={store.favorites.includes(name) ? "btn btn-danger" : "btn btn-warning"} onClick={event => actions.addList(name)}>
-                                {store.favorites.includes(name) ? <i className="far fa-heart"></i>: <i className="fas fa-heart"></i>}
+                            <button type="button" className={store.favorites.includes(name) ? "btn btn-success" : "btn btn-warning"} onClick={event => actions.addList(name)}>
+                                {store.favorites.includes(name) ? "Delete" : "Add"}
 
                             </button>
                         </div>
