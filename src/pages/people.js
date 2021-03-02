@@ -10,7 +10,7 @@ export default function(props) {
     const { store, actions } = useContext(Context);
 
     let person = store.people[params.index] 
-    
+
     return (
         <div className="container">
             <div className="row height-body align-items-center">
@@ -19,8 +19,7 @@ export default function(props) {
                     </img>
                 </div>
                 <div className="col-6 text-center pr-5">
-                    <h1>{person.name}</h1>
-                    <p><Text name={person.name}/></p> 
+                    <h1>{person.name}</h1> 
                 </div>
             </div>
             <div className="divider-pink"></div>

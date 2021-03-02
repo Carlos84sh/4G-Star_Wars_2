@@ -23,12 +23,12 @@ export default function({favorites}) {
                     <div className="dropdown-menu" aria-labelledby="dropdownMenuButton">
                         {store.favorites.map((value, index) => {
                             return (
-                                <a key={index} className="dropdown-item" href="#">
+                                <div key={index} className="dropdown-item">
                                     {value}
                                     <button onClick={(event) => actions.deleteList(value)} type="button" className="close" aria-label="Close">
                                         <span aria-hidden="true">&times;</span>
                                     </button>
-                                </a>
+                                </div>
                             )
                         })}
                     </div>

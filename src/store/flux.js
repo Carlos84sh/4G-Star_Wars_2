@@ -61,10 +61,11 @@ export default function({ getStore, getActions, setStore }) {
                 }
                 
             },    
-            deleteList(id) {   //eliminar de la lista
+            deleteList(name) {   //eliminar de la lista
                 const store = getStore()
                 const list = store.favorites.filter((element, index) => {
-                        return(element != id)
+                        return(element != name)
+                     
                 })
                 setStore({favorites: list})
                 console.log("favorito eliminado", store.favorites)
