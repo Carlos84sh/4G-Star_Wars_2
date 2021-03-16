@@ -6,6 +6,10 @@ import { Context } from "../store/index.js";
 export default function({favorites}) {
     const { store, actions } = useContext(Context);
 
+    useEffect( ()=>{
+        localStorage.getItem("favoriteId") ? actions.setFavorite(localStorage.getItem("favoriteId").split(",")) : "";
+    },[])
+    
 
     return (
         <nav className="navbar navbar-expand navbar-light mb-3">

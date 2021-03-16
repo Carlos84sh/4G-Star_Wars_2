@@ -54,11 +54,14 @@ export default function({ getStore, getActions, setStore }) {
                         return(element != id)
                     })
                     setStore({favorites: list})
+                    localStorage.setItem("favoriteId",list)
                 } else {
                     const list = [...store.favorites]
-                    list.push(id)
+                    list.push(id)                    
                     setStore({favorites: list})
+                    localStorage.setItem("favoriteId",list)
                 }
+                
                 
             },    
             deleteList(name) {   //eliminar de la lista
@@ -67,9 +70,15 @@ export default function({ getStore, getActions, setStore }) {
                         return(element != name)
                      
                 })
+                localStorage.removeItem("favoriteId");
                 setStore({favorites: list})
+                localStorage.setItem("favoriteId",list)
                 console.log("favorito eliminado", store.favorites)
-            }   
+            },
+            
+            setFavorite(favoriteId){
+                setStore({favorites: favoriteId})
+            }
         }
     }
 }
